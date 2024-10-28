@@ -1,0 +1,7 @@
+<button class="btn" [ngClass]="{'spec': type == 'spec', 'operator': type == 'operator'}" type="button" (click)="clickButton()">
+    @if (icon) {
+        <mat-icon fontIcon="{{icon}}"></mat-icon>
+    } @else { 
+        {{value}}
+    }
+</button>

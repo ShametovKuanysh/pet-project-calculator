@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$dark_back: #23252d;
+$light_back: #ffffff;
+$white: #ffffff;
+$light_grey: #f9f9f9;
+$dark_grey: #292d36;
+$black: #000000;
+$border_radius: .5rem;
+$active_icon: #53555c;
+$icon: #e2e2e2;
+$operator: #f47a7b;
+$spec: #30fbd6;
+
+$button_light: #f7f7f7;
+$button_dark: #272b33;
+
+
+
+
+// mixin that enables css variables in light mode
+@mixin lighten() {
+    --button: #{$button_light};
+    --button-color: #{$black};
+    --back-color: #{$light_grey};
+    --back: #{$light_back};
+    --text-color: #{$black};
+    --active-icon: #{$active_icon};
+    --icon: #{$icon};
+}
+
+@mixin darken() {
+    --button: #{$button_dark};
+    --button-color: #{$white};
+    --back-color: #{$dark_grey};
+    --back: #{$dark_back};
+    --text-color: #{$white};
+    --active-icon: #{$white};
+    --icon: #{$active_icon};
+}
+
+body.dark-mode {
+    @include darken();
+}
+
+body.light-mode {
+    @include lighten();
+}
